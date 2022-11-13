@@ -64,7 +64,7 @@ output :
 ```
 Elapsed for CPU: 1.83042
 Elapsed for GPU: 0.257516
-diff = 1.1
+diff = 0.0
 ```
 
 ## Customization point
