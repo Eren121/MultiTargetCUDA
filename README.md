@@ -2,6 +2,11 @@
 
 Implement algorithms for GPU and CPU without to duplicate the code
 
+## Dependencies
+
+- OpenCV compiled with CUDA
+- Eigen
+
 ## Example
 
 example in `main.cu` and `UserCode.cu` :
