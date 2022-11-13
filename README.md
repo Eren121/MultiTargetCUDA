@@ -4,9 +4,22 @@ Implement algorithms for GPU and CPU without to duplicate the code
 
 ## Example
 
-example in `main.cu` :
+example in `main.cu` and `UserCode.cu` :
+
 
 ```c++
+template<class Target>
+CUDA_BOTH void UserCode<Target>::add1ToAllElements(int iRow, int iCol, Matrix<float>& matrix)
+{
+    matrix(iRow, iCol) += 1.0f;
+}
+
+template<class Target>
+CUDA_BOTH void UserCode<Target>::multiplyBy2AllElements(int iRow, int iCol, Matrix<float>& matrix)
+{
+    matrix(iRow, iCol) *= 2.0f;
+}
+
 template<typename Target>
 void profile(cv::Mat_<float>& toModify, const char* title)
 {
