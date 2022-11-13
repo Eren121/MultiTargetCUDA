@@ -14,9 +14,9 @@ example in `main.cu` and `UserCode.cu` :
 
 ```c++
 template<class Target>
-CUDA_BOTH void UserCode<Target>::add1ToAllElements(int iRow, int iCol, Matrix<float>& matrix)
+CUDA_BOTH void UserCode<Target>::addToAllElements(int iRow, int iCol, Matrix<float>& matrix, int i)
 {
-    matrix(iRow, iCol) += 1.0f;
+    matrix(iRow, iCol) += i;
 }
 
 template<class Target>
