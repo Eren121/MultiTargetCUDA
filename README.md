@@ -42,7 +42,7 @@ void profile(cv::Mat_<float>& toModify, const char* title)
 
     const auto end = high_resolution_clock::now();
     const float elapsed = duration_cast<std::chrono::duration<float>>(end - start).count();
-    std::cout << "Elapsed for " << title << ": "  << elapsed << std::endl;
+    std::cout << "Elapsed for " << title << ": " << std::fixed << std::setprecision(2)  << elapsed << std::endl;
 };
 
 int main()
@@ -64,7 +64,7 @@ output :
 ```
 Elapsed for CPU: 1.83042
 Elapsed for GPU: 0.257516
-diff = 0.0
+diff = 0.00
 ```
 
 ## Customization point
