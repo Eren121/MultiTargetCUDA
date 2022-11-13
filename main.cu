@@ -4,6 +4,7 @@
 #include "UserCode.h"
 #include <chrono>
 #include <iostream>
+#include <iomanip>
 
 template<typename Target>
 void profile(cv::Mat_<float>& toModify, const char* title)
@@ -27,7 +28,7 @@ void profile(cv::Mat_<float>& toModify, const char* title)
 
     const auto end = high_resolution_clock::now();
     const float elapsed = duration_cast<std::chrono::duration<float>>(end - start).count();
-    std::cout << "Elapsed for " << title << ": "  << elapsed << std::endl;
+    std::cout << "Elapsed for " << title << ": " << std::fixed << std::setprecision(2)  << elapsed << std::endl;
 };
 
 int main()
