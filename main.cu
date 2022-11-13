@@ -21,7 +21,7 @@ void profile(cv::Mat_<float>& toModify, const char* title)
 
         for(int i = 0; i < 10; i++)
         {
-            Pipeline::template parallel_for_each_cell<UserCode::add1ToAllElements>(d_toModify);
+            Pipeline::template parallel_for_each_cell<UserCode::addToAllElements>(d_toModify, i);
             Pipeline::template parallel_for_each_cell<UserCode::multiplyBy2AllElements>(d_toModify);
         }
 
@@ -35,7 +35,7 @@ void profile(cv::Mat_<float>& toModify, const char* title)
 
 int main()
 {
-    const int rows = 10000;
+    const int rows = 1000;
     const int cols = 10000;
 
     cv::Mat_<float> cpuMat(rows, cols, 0.0f);
